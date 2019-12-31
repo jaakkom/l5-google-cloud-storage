@@ -2,6 +2,7 @@
 
 namespace Websight\GcsProvider;
 
+use Illuminate\Support\Str;
 use CedricZiel\FlysystemGcs\GoogleCloudStorageAdapter;
 use Google\Cloud\Storage\StorageClient;
 use Illuminate\Support\ServiceProvider;
@@ -91,6 +92,6 @@ class CloudStorageServiceProvider extends ServiceProvider
      */
     protected function isLumen()
     {
-        return str_contains($this->app->version(), 'Lumen');
+        return Str::contains($this->app->version(), 'Lumen');
     }
 }
